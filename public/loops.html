@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Loops - PANAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="loops.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar container">
+      <div class="brand">PANAS</div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a href="browse-beats.html">BEATS</a>
+        <a href="loops.html">LOOPS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="https://www.instagram.com/panas_loops_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h-8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5v-8a5 5 0 0 0-5-5Zm-4 15a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm6.5-10.75a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>
+        </a>
+        <a class="button button-outline cart-button" href="cart.html">CART (<span class="cart-count">0</span>)</a>
+      </div>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <main>
+    <section class="loops-hero">
+      <div class="loops-bg-grid"></div>
+      <div class="container loops-hero-inner">
+        <div class="loops-hero-copy">
+          <p class="breadcrumb">PRODUCER RESOURCES / FREE DOWNLOADS</p>
+          <h1>
+            <span>FREE</span>
+            <span>INDUSTRY</span>
+            <span>LOOPS</span>
+          </h1>
+          <p class="hero-subtitle">Free loop kits for dark trap, rage, pluggnb, and melodic records. Unlock with email and download instantly.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#loopsGrid">BROWSE KITS</a>
+            <button class="button button-secondary" type="button" data-download-kit="midnight-opium">DOWNLOAD FREE LOOPS</button>
+          </div>
+          <p class="loops-microcopy">Free download. Not royalty-free; PANAS keeps 50% of royalties on releases using these loops.</p>
+        </div>
+
+        <div class="loops-hero-stack" aria-label="Featured free loop kits">
+          <img src="images/loops/iceman.jpg" alt="ICEMAN loop kit cover artwork" />
+          <img src="images/loops/luxury.jpg" alt="LUXURY loop kit cover artwork" />
+          <img src="images/loops/breeze-vol-2.jpg" alt="BREEZE VOL.2 loop kit cover artwork" />
+          <div class="loops-hero-panel">
+            <span>FREE KIT VAULT</span>
+            <b>10 loop kits ready</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="loops-feature-row" id="newestKits">
+      <div class="container section-header">
+        <div><span class="section-label">01 - NEWEST FREE KITS</span></div>
+      </div>
+      <div class="container newest-grid" id="newestGrid"></div>
+    </section>
+
+    <section class="loops-library">
+      <div class="container section-header loops-library-header">
+        <div>
+          <span class="section-label">02 - LOOP KIT LIBRARY</span>
+          <h2>Free loop kits</h2>
+        </div>
+        <label class="loops-search">
+          <span>SEARCH</span>
+          <input id="loopSearch" type="search" placeholder="Genre, mood, key..." />
+        </label>
+      </div>
+
+      <div class="container loops-filters" aria-label="Loop filters">
+        <div id="genreFilters"></div>
+        <div id="bpmFilters"></div>
+        <div id="moodFilters"></div>
+        <div id="keyFilters"></div>
+      </div>
+
+      <div class="container loops-grid" id="loopsGrid"></div>
+    </section>
+  </main>
+
+  <div class="loop-modal" id="loopModal" hidden>
+    <div class="loop-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalKitTitle">
+      <button class="loop-modal-close" type="button" id="closeLoopModal" aria-label="Close download form">×</button>
+      <p class="breadcrumb">UNLOCK FREE DOWNLOAD</p>
+      <h2 id="modalKitTitle">Free Loop Kit</h2>
+      <p>Enter your email and the kit unlocks instantly. No checkout, no hidden fee.</p>
+      <form id="loopLeadForm">
+        <label>
+          <span>Email</span>
+          <input id="leadEmail" type="email" required placeholder="producer@email.com" />
+        </label>
+        <label>
+          <span>Producer name</span>
+          <input id="producerName" type="text" placeholder="Optional" />
+        </label>
+        <label class="loop-checkbox">
+          <input id="leadOptIn" type="checkbox" checked />
+          <span>Send me new free loops and beat drops</span>
+        </label>
+        <p class="loop-form-message" id="loopFormMessage"></p>
+        <button class="button button-primary" type="submit">UNLOCK DOWNLOAD</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">PANAS</div>
+      <div class="footer-copy">© 2026 PANAS. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">TERMS</a>
+        <a href="#">PRIVACY</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="loops.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Beat License</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="premium-beat.css" />
+</head>
+<body>
+  <div class="page-noise"></div>
+  <header class="premium-header">
+    <a class="premium-brand" href="index.html">PANAS</a>
+    <nav>
+      <a href="browse-beats.html">Beats</a>
+      <a href="loops.html">Loops</a>
+      <a href="#licenses">Licenses</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="premium-hero">
+      <div class="art-wrap" data-tilt>
+        <div class="art-glow"></div>
+        <div class="art-frame">
+          <img id="beatArtwork" src="images/in-the-air.png" alt="IN THE AIR beat artwork" />
+          <span class="scanline"></span>
+        </div>
+      </div>
+
+      <div class="beat-panel">
+        <p class="eyebrow">Underground Premium</p>
+        <h1 class="glitch" id="beatTitle" data-text="IN THE AIR">IN THE AIR</h1>
+        <div class="stats-grid">
+          <div><strong id="beatBpm">150</strong><span>BPM</span></div>
+          <div><strong id="beatKey">Cm</strong><span>Key</span></div>
+          <div><strong id="beatLength">2:08</strong><span>Length</span></div>
+        </div>
+
+        <div class="beat-meta-line" id="beatMetaLine">
+          <span>Produced by <b>PANAS LOOPS</b></span>
+          <span>Uploaded May 12, 2026</span>
+        </div>
+
+        <div class="tags" id="beatTags">
+          <span>dark</span>
+          <span>rage</span>
+          <span>opium</span>
+          <span>underground</span>
+          <span>cinematic</span>
+        </div>
+
+        <section class="premium-player" aria-label="Audio player">
+          <div class="player-heading">
+            <div>
+              <p>Premium Player</p>
+              <h2 id="playerTitle">IN THE AIR</h2>
+            </div>
+            <button class="fullscreen-button" type="button" id="fullscreenButton">⛶</button>
+          </div>
+          <button class="waveform" type="button" id="waveform" aria-label="Seek audio">
+            <span class="wave-progress" id="waveProgress"></span>
+          </button>
+          <div class="player-controls">
+            <button class="play-main" type="button" id="playButton" aria-label="Play beat">▶</button>
+            <span class="time-readout"><span id="currentTime">0:00</span> / <span id="duration">0:00</span></span>
+            <span class="live-state" id="liveState">READY</span>
+          </div>
+          <audio id="premiumAudio" preload="metadata"></audio>
+        </section>
+      </div>
+    </section>
+
+    <section class="section-shell" id="licenses">
+      <div class="section-heading">
+        <p class="eyebrow">Select License</p>
+        <h2>Usage Rights</h2>
+      </div>
+      <div class="license-grid" id="licenseGrid">
+        <article class="license-card">
+          <h3>MP3 Lease</h3>
+          <strong>$19.99</strong>
+          <p>Tagged MP3 file for demos, YouTube, and basic streaming use.</p>
+          <ul><li>Tagged MP3 file</li><li>Demo-ready audio</li><li>Basic streaming file</li></ul>
+          <button type="button" onclick="window.location.href='license.html?beat=in-the-air&license=mp3-lease'">Buy License</button>
+        </article>
+        <article class="license-card">
+          <h3>WAV Lease</h3>
+          <strong>$29.99</strong>
+          <p>High-quality WAV file for professional recording and streaming platforms.</p>
+          <ul><li>High-quality WAV file</li><li>Professional recording file</li><li>Streaming platform file</li></ul>
+          <button type="button" onclick="window.location.href='license.html?beat=in-the-air&license=wav-lease'">Buy License</button>
+        </article>
+        <article class="license-card featured-license">
+          <h3>Trackout Lease</h3>
+          <strong>$59.99</strong>
+          <p>Includes WAV file + all separated stems/trackouts in a ZIP folder for full mixing and mastering flexibility.</p>
+          <ul><li>WAV file included</li><li>Separated stems/trackouts</li><li>ZIP folder delivery</li></ul>
+          <button type="button" onclick="window.location.href='license.html?beat=in-the-air&license=trackout-lease'">Buy License</button>
+        </article>
+        <article class="license-card">
+          <h3>Exclusive Rights</h3>
+          <strong>$299.99</strong>
+          <p>Buyer receives exclusive ownership rights and the beat is removed from the store after purchase.</p>
+          <ul><li>Exclusive ownership rights</li><li>Beat removed from store</li><li>Full exclusive delivery</li></ul>
+          <button type="button" onclick="window.location.href='license.html?beat=in-the-air&license=exclusive-rights'">Buy License</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Sound Match</p>
+        <h2>Similar Beats</h2>
+      </div>
+      <div class="similar-row" id="similarRow">
+        <article><img src="images/bizzy-bap.png" alt="BIZZY BAP artwork" /><b>BIZZY BAP</b><span>Am · 130 BPM</span></article>
+        <article><img src="images/atlanta.png" alt="ATLANTA artwork" /><b>ATLANTA</b><span>Cm · 140 BPM</span></article>
+        <article><img src="images/top-floor.png" alt="TOP FLOOR artwork" /><b>TOP FLOOR</b><span>Cm · 140 BPM</span></article>
+        <article><img src="images/road.png" alt="ROAD artwork" /><b>ROAD</b><span>Cm · 141 BPM</span></article>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="notes-card">
+        <p class="eyebrow">Producer Notes</p>
+        <h2>Vocal Direction</h2>
+        <p id="producerNotes">Keep the vocal intimate and dry in the first eight bars, then widen the hook with doubles and filtered ad-libs. The beat leaves pockets for whisper flows, sudden triplet runs, and one clean melodic switch before the second drop.</p>
+        <div class="tags" id="compatibilityTags">
+          <span>Destroy Lonely</span><span>Lucki</span><span>Ken Carson</span><span>Future</span><span>Veeze</span>
+        </div>
+      </article>
+      <article class="notes-card">
+        <p class="eyebrow">Reactions</p>
+        <h2>Comments</h2>
+        <p><b>Kairo:</b> Hook comes in stupid clean. This is the one.</p>
+        <p><b>Mira:</b> Feels expensive and empty in the right way.</p>
+        <p><b>JX:</b> Drums hit but still leave room for the vocal.</p>
+      </article>
+    </section>
+  </main>
+
+  <div class="listen-modal" id="listenModal" hidden>
+    <button type="button" id="closeModal" aria-label="Close fullscreen player">×</button>
+    <p class="eyebrow">Listening Mode</p>
+    <h2 id="modalTitle">IN THE AIR</h2>
+    <div class="modal-wave" id="modalWave"></div>
+    <button class="play-main" type="button" id="modalPlay">▶</button>
+  </div>
+
+  <script src="premium-beat.js"></script>
+</body>
+</html>

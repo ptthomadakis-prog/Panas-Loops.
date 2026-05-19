@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loop Kit - PANAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="loops.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar container">
+      <div class="brand">PANAS</div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a href="browse-beats.html">BEATS</a>
+        <a href="loops.html">LOOPS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button button-outline cart-button" href="cart.html">CART (<span class="cart-count">0</span>)</a>
+      </div>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <main id="loopKitDetail"></main>
+
+  <div class="loop-modal" id="loopModal" hidden>
+    <div class="loop-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalKitTitle">
+      <button class="loop-modal-close" type="button" id="closeLoopModal" aria-label="Close download form">×</button>
+      <p class="breadcrumb">UNLOCK FREE DOWNLOAD</p>
+      <h2 id="modalKitTitle">Free Loop Kit</h2>
+      <p>Enter your email and the kit unlocks instantly. No checkout, no hidden fee.</p>
+      <form id="loopLeadForm">
+        <label>
+          <span>Email</span>
+          <input id="leadEmail" type="email" required placeholder="producer@email.com" />
+        </label>
+        <label>
+          <span>Producer name</span>
+          <input id="producerName" type="text" placeholder="Optional" />
+        </label>
+        <label class="loop-checkbox">
+          <input id="leadOptIn" type="checkbox" checked />
+          <span>Send me new free loops and beat drops</span>
+        </label>
+        <p class="loop-form-message" id="loopFormMessage"></p>
+        <button class="button button-primary" type="submit">UNLOCK DOWNLOAD</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">PANAS</div>
+      <div class="footer-copy">© 2026 PANAS. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">TERMS</a>
+        <a href="#">PRIVACY</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="loops.js"></script>
+  <script src="loop-kit.js"></script>
+</body>
+</html>

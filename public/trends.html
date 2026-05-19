@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Beat Trends - PANAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="trends.css" />
+</head>
+<body class="trends-page">
+  <header class="site-header">
+    <div class="topbar container">
+      <div class="brand">PANAS</div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a href="browse-beats.html">BEATS</a>
+        <a href="loops.html">LOOPS</a>
+        <a href="trends.html" aria-current="page">TRENDS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="https://www.instagram.com/panas_loops_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h-8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5v-8a5 5 0 0 0-5-5Zm-4 15a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm6.5-10.75a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>
+        </a>
+        <a class="button button-outline cart-button" href="cart.html">CART (<span class="cart-count">0</span>)</a>
+      </div>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <main>
+    <section class="trends-hero">
+      <div class="trend-bg-grid" aria-hidden="true"></div>
+      <div class="trend-scanline" aria-hidden="true"></div>
+      <div class="container trends-hero-inner">
+        <div class="trends-hero-copy">
+          <p class="breadcrumb">LIVE PUBLIC MUSIC SIGNALS / UPDATED WEEKLY</p>
+          <h1>
+            <span>LIVE BEAT</span>
+            <span>TRENDS</span>
+          </h1>
+          <p class="hero-subtitle">Real public chart, news, and search-feed signals translated into producer direction.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#trendFeed">EXPLORE TRENDS</a>
+            <a class="button button-secondary" href="#weeklyPulse">SEE WHAT'S HOT</a>
+          </div>
+        </div>
+
+        <aside class="trend-cockpit" aria-label="Live trend intelligence preview">
+          <div class="cockpit-header">
+            <span>Live Trend Feed</span>
+            <b id="heroSignalState">Loading live sources</b>
+          </div>
+          <div class="hero-waveform" aria-hidden="true">
+            <span style="--height: 42%"></span>
+            <span style="--height: 78%"></span>
+            <span style="--height: 54%"></span>
+            <span style="--height: 94%"></span>
+            <span style="--height: 48%"></span>
+            <span style="--height: 86%"></span>
+            <span style="--height: 62%"></span>
+            <span style="--height: 100%"></span>
+            <span style="--height: 52%"></span>
+            <span style="--height: 72%"></span>
+            <span style="--height: 36%"></span>
+            <span style="--height: 88%"></span>
+          </div>
+          <div class="cockpit-grid">
+            <div>
+              <span>Top signal</span>
+              <b id="heroTopSignal">Waiting for live source</b>
+            </div>
+            <div>
+              <span>Tempo pocket</span>
+              <b id="heroTempoPocket">--</b>
+            </div>
+            <div>
+              <span>Momentum</span>
+              <b id="heroMomentum">--</b>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trend-feed-section" id="trendFeed">
+      <div class="container section-header trends-section-header">
+        <div>
+          <span class="section-label">01 - SOCIAL / CULTURE TRENDS</span>
+          <h2>Trending beat styles</h2>
+        </div>
+        <p class="trend-section-note">Public feeds only: Apple Music RSS, Google News RSS, and Google Trends RSS when available.</p>
+      </div>
+
+      <div class="container trend-filter-panel" aria-label="Trend filters">
+        <label>
+          <span>Genre</span>
+          <select id="genreFilter"></select>
+        </label>
+        <label>
+          <span>Mood</span>
+          <select id="moodFilter"></select>
+        </label>
+        <label>
+          <span>BPM range</span>
+          <select id="bpmFilter"></select>
+        </label>
+        <label>
+          <span>Trend status</span>
+          <select id="statusFilter"></select>
+        </label>
+        <button class="button button-secondary trend-reset-button" type="button" id="resetTrendFilters">RESET</button>
+      </div>
+
+      <div class="container trend-result-bar">
+        <span id="trendResultCount">Loading trend signals...</span>
+        <span id="trendSourceStatus">Pulling public source feeds...</span>
+      </div>
+
+      <div class="container trend-card-grid" id="trendCards" aria-live="polite"></div>
+    </section>
+
+    <section class="ai-engine-section" id="aiEngine">
+      <div class="container section-header trends-section-header">
+        <div>
+          <span class="section-label">02 - LIVE DATA READ</span>
+          <h2>Trend Insight Engine</h2>
+        </div>
+        <button class="button button-primary" type="button" id="rerunEngine">REFRESH READ</button>
+      </div>
+
+      <div class="container ai-engine-layout">
+        <div class="ai-output-panel">
+          <div class="ai-panel-topline">
+            <span id="engineStatus">Model ready</span>
+            <span id="engineScope">All external culture signals</span>
+          </div>
+          <div class="ai-output-grid" id="aiOutput"></div>
+        </div>
+
+        <aside class="ai-reasoning-panel">
+          <div class="reasoning-header">
+            <span>Reasoning stream</span>
+            <b>Public-feed recommendations</b>
+          </div>
+          <div class="reasoning-stream" id="reasoningStream" aria-live="polite"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="weekly-pulse-section" id="weeklyPulse">
+      <div class="container section-header trends-section-header">
+        <div>
+          <span class="section-label">03 - WEEKLY PUBLIC DATA PULSE</span>
+          <h2>What is moving this week</h2>
+        </div>
+      </div>
+
+      <div class="container weekly-layout">
+        <article class="weekly-summary">
+          <span>Generated from public feeds</span>
+          <h3>Weekly Market Pulse</h3>
+          <p id="weeklySummaryText"></p>
+          <p class="weekly-source-meta" id="weeklySourceMeta"></p>
+        </article>
+
+        <div class="momentum-panel">
+          <span>Trend momentum</span>
+          <div id="momentumBars"></div>
+        </div>
+
+        <div class="top-styles-panel">
+          <span>Top styles this week</span>
+          <ol id="topStylesList"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="future-modules-section">
+      <div class="container section-header trends-section-header">
+        <div>
+          <span class="section-label">04 - FUTURE MODULES</span>
+          <h2>Next intelligence layers</h2>
+        </div>
+      </div>
+      <div class="container future-module-grid" id="futureModules"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">PANAS</div>
+      <div class="footer-copy">&copy; 2026 PANAS. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">TERMS</a>
+        <a href="#">PRIVACY</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="trends.js"></script>
+</body>
+</html>
