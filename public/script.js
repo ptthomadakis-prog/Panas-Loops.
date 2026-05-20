@@ -3,7 +3,7 @@ const beats = [
     title: 'IN THE AIR',
     info: 'Cm - 150 BPM - 2:08',
     price: '$19.99',
-    file: 'IN THE AIR tagged.mp3',
+    file: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3.mp3",
     page: 'in-the-air.html',
   },
   {
@@ -272,7 +272,7 @@ function initializeCart() {
 function initializeFeaturedPlayer() {
   const featuredAudio = document.getElementById('featured-audio');
   if (featuredAudio) {
-    featuredAudio.src = audioPath('IN THE AIR tagged.mp3');
+    featuredAudio.src = audioPath("[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3.mp3");
     featuredAudio.onended = () => setFeaturedPlaying(false);
   }
   setFeaturedPlaying(false);

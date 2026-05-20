@@ -1,5 +1,5 @@
 const browseBeats = [
-  "IN THE AIR tagged.mp3",
+  "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3.mp3",
   "TOP FLOOR tagged.mp3",
   "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.mp3",
   "ATLANTA tagged.mp3",
