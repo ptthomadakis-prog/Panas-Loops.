@@ -39,3 +39,7 @@ PAYPAL_CLIENT_SECRET=your_paypal_client_secret_here
 For the full protected PayPal download flow, deploy to a host that supports Next.js server routes, such as Vercel.
 
 If you use a static host like GitHub Pages, it can only show the public storefront pages. The root `index.html` redirects static hosts into `public/index.html`.
+
+Production PayPal is working only when `https://your-domain.example/api/paypal/config` returns JSON with a `clientId`. If that URL returns `404`, the site is being served statically and the cart cannot create or capture PayPal orders.
+
+Do not deploy `private/audio` with a static host. Static hosting can expose those paid masters directly; they are protected only when the Next.js `/api/download` route serves them after PayPal verification.

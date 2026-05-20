@@ -8,7 +8,7 @@ This folder contains a beat shop website with public audio previews and protecte
 - `styles.css` - styling for the page layout and cards.
 - `script.js` - beat data, audio preview support, and cart actions.
 - `cart.js` - cart rendering and PayPal checkout button wiring.
-- `private/audio` - paid audio files served only after PayPal verification.
+- `../private/audio` - paid audio files served only after PayPal verification when the site is running through Next.js.
 - `public/previews` - public preview audio used by the players.
 
 ## PayPal Setup
@@ -28,6 +28,10 @@ Setup:
 6. Open the local URL printed by Next.js and use the HTML pages through that server.
 
 The cart creates and captures PayPal orders through `/api/paypal/create-order` and `/api/paypal/capture-order`. Download buttons use `/api/download`, which checks PayPal before serving files from `private/audio`.
+
+On the live domain, confirm `/api/paypal/config` returns JSON. If it returns `404`, the host is serving only static files and PayPal checkout cannot work there.
+
+Do not publish this repo through GitHub Pages with `private/audio` included. A static host can expose the paid files directly instead of routing them through `/api/download`.
 
 ## Preview Files
 

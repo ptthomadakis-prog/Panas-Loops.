@@ -214,7 +214,12 @@ function loadCartPayPalSdk(callback) {
   }
 
   fetch('/api/paypal/config')
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`PayPal config endpoint returned ${response.status}`);
+      }
+      return response.json();
+    })
     .then((config) => {
       if (!config.clientId) throw new Error('Missing PayPal client ID.');
 
@@ -227,9 +232,12 @@ function loadCartPayPalSdk(callback) {
       };
       document.head.appendChild(script);
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error('PayPal setup error:', error);
       const status = document.getElementById('paymentStatus');
-      if (status) status.textContent = 'PayPal is not configured yet. Add your PayPal credentials to .env.local.';
+      if (status) {
+        status.textContent = 'PayPal checkout is unavailable because the server API routes are not running on this site.';
+      }
     });
 }
 
