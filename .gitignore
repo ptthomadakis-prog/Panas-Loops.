@@ -6,3 +6,9 @@ out
 .env.local
 .env*.local
 *.log
+
+.vercel
+incoming-beats/
+private/audio/
+.env*
+.env*

@@ -1,19 +1,41 @@
-import { createReadStream, existsSync } from "fs";
-import { basename, join, resolve } from "path";
-import { Readable } from "stream";
+import { basename, extname } from "path";
 import { NextRequest, NextResponse } from "next/server";
+import { get } from "@vercel/blob";
+import { filesForPaidSku } from "../_lib/beat-catalog";
 import { getPayPalOrder } from "../_lib/paypal";
-
-const privateAudioRoot = resolve(process.cwd(), "private", "audio");
 
 function paidFilesFromOrder(order: any) {
   const units = Array.isArray(order?.purchase_units) ? order.purchase_units : [];
-  return new Set(
-    units.flatMap((unit: any) => {
-      const items = Array.isArray(unit.items) ? unit.items : [];
-      return items.map((item: any) => item.sku).filter(Boolean);
-    }),
-  );
+  const paidFiles = new Set<string>();
+
+  units.forEach((unit: any) => {
+    const items = Array.isArray(unit.items) ? unit.items : [];
+    items.forEach((item: any) => {
+      const sku = item.sku;
+      if (!sku) return;
+
+      // Keep old PayPal orders working if they stored a direct file name as the SKU.
+      paidFiles.add(sku);
+      filesForPaidSku(sku).forEach((file) => paidFiles.add(file));
+    });
+  });
+
+  return paidFiles;
+}
+
+function contentType(file: string) {
+  switch (extname(file).toLowerCase()) {
+    case ".wav":
+      return "audio/wav";
+    case ".zip":
+      return "application/zip";
+    default:
+      return "audio/mpeg";
+  }
+}
+
+function blobPath(file: string) {
+  return `beats/${basename(file)}`;
 }
 
 export async function GET(request: NextRequest) {
@@ -26,12 +48,6 @@ export async function GET(request: NextRequest) {
     }
 
     const safeFile = basename(file);
-    const filePath = resolve(join(privateAudioRoot, safeFile));
-
-    if (!filePath.startsWith(privateAudioRoot) || !existsSync(filePath)) {
-      return NextResponse.json({ error: "File not found" }, { status: 404 });
-    }
-
     const order = await getPayPalOrder(orderId);
     const paidFiles = paidFilesFromOrder(order);
 
@@ -39,10 +55,16 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Payment has not been verified for this file" }, { status: 403 });
     }
 
-    const stream = Readable.toWeb(createReadStream(filePath)) as ReadableStream;
-    return new NextResponse(stream, {
+    const blob = await get(blobPath(safeFile), { access: "private", useCache: false });
+
+    if (!blob || blob.statusCode !== 200 || !blob.stream) {
+      return NextResponse.json({ error: "File not found" }, { status: 404 });
+    }
+
+    return new NextResponse(blob.stream, {
       headers: {
-        "Content-Type": "audio/mpeg",
+        "Content-Type": blob.blob.contentType || contentType(safeFile),
+        "Content-Length": String(blob.blob.size),
         "Content-Disposition": `attachment; filename="${safeFile.replace(/"/g, "")}"`,
         "Cache-Control": "private, no-store",
       },

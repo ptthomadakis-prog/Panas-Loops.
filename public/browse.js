@@ -1,5 +1,5 @@
 const browseBeats = [
-  "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3.mp3",
+  "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3",
   "TOP FLOOR tagged.mp3",
   "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.mp3",
   "ATLANTA tagged.mp3",
@@ -10,6 +10,8 @@ const browseBeats = [
   "NOISY tagged.mp3",
   "SLATT tagged.mp3",
   "BIZZY BAP TAGGED.mp3",
+  "SLICED tagged.mp3",
+  "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.mp3",
 ];
 
 const browseGrid = document.getElementById('browseBeatsGrid');
@@ -30,12 +32,16 @@ function imagePath(title) {
   return `images/${beatSlug(title)}.png`;
 }
 
+function fallbackImagePath(title) {
+  return `images/${beatSlug(title)}.jpg`;
+}
+
 function beatSlug(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
 function beatImage(title) {
-  return `<img src="${imagePath(title)}" alt="${title} artwork" loading="lazy" onerror="this.hidden = true" />`;
+  return `<img src="${imagePath(title)}" alt="${title} artwork" loading="lazy" onerror="if (!this.dataset.fallback) { this.dataset.fallback = 'jpg'; this.src = '${fallbackImagePath(title)}'; } else { this.hidden = true; }" />`;
 }
 
 function beatPrice(title) {

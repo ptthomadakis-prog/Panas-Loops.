@@ -1,62 +1,141 @@
 ﻿const cartItems = document.getElementById('cartItems');
 const cartSummary = document.getElementById('cartSummary');
 
-const beatCatalog = {
   'IN THE AIR': {
     price: '$19.99',
     file: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3",
+    files: {
+      mp3: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3",
+      wav: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops WAV.wav",
+      zip: "IN THE AIR.zip",
+    },
     page: 'in-the-air.html',
   },
   'TOP FLOOR': {
     price: '$19.99',
     file: "[destroy lonely, lucki] 'TOP FLOOR'-Cm 140bpm- @panas_loops.mp3",
+    files: {
+      mp3: "[destroy lonely, lucki] 'TOP FLOOR'-Cm 140bpm- @panas_loops.mp3",
+      wav: "[destroy lonely, lucki] 'TOP FLOOR'-Cm 140bpm- @panas_loops.wav",
+      zip: "TOP FLOOR.zip",
+    },
     page: 'browse-beats.html',
   },
   FOREIGN: {
     price: '$19.99',
     file: "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.mp3",
+    files: {
+      mp3: "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.mp3",
+      wav: "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.wav",
+      zip: "FOREIGN.zip",
+    },
     page: 'browse-beats.html',
   },
   ATLANTA: {
     price: '$25.00',
     file: "[future, lil baby, destroy lonely]'ATLANTA'-Cm 140bpm- @panas_loops.mp3",
+    files: {
+      mp3: "[future, lil baby, destroy lonely]'ATLANTA'-Cm 140bpm- @panas_loops.mp3",
+      wav: "[future, lil baby, destroy lonely]'ATLANTA'-Cm 140bpm- @panas_loops WAV.wav",
+      zip: "ATLANTA.zip",
+    },
     page: 'atlanta.html',
   },
   OUNCE: {
     price: '$19.99',
     file: "[ian, summrs] 'OUNCE'-Cm 140bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[ian, summrs] 'OUNCE'-Cm 140bpm - @panas_loops.mp3",
+      wav: "[ian, summrs] 'OUNCE'-Cm 140bpm - @panas_loops WAV.wav",
+      zip: "OUNCE.zip",
+    },
     page: 'browse-beats.html',
   },
   'CRASH DA WHIP': {
     price: '$19.99',
     file: "[ken carson, rich amiri, homixide gang] 'CRASH DA WHIP'- Am 130bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[ken carson, rich amiri, homixide gang] 'CRASH DA WHIP'- Am 130bpm - @panas_loops.mp3",
+      wav: "[ken carson, rich amiri, homixide gang] 'CRASH DA WHIP'- Am 130bpm - @panas_loops WAV.wav",
+      zip: "CRASH DAW WHIP.zip",
+    },
     page: 'browse-beats.html',
   },
   LEAN: {
     price: '$19.99',
     file: "[lucki, glokk40spaz] 'LEAN' Gm 140bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[lucki, glokk40spaz] 'LEAN' Gm 140bpm - @panas_loops.mp3",
+      wav: "[lucki, glokk40spaz] 'LEAN' Gm 140bpm - @panas_loops WAV.wav",
+      zip: "LEAN.zip",
+    },
     page: 'browse-beats.html',
   },
   ROAD: {
     price: '$19.99',
     file: "[lucki, veeze] 'ROAD' Cm 141 bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[lucki, veeze] 'ROAD' Cm 141 bpm - @panas_loops.mp3",
+      wav: "[lucki, veeze] 'ROAD' Cm 141 bpm - @panas_loops WAV.wav",
+      zip: "ROAD.zip",
+    },
     page: 'browse-beats.html',
   },
   NOISY: {
     price: '$19.99',
     file: "[young thug, future, destroy lonely] 'NOISY' Cm 140bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[young thug, future, destroy lonely] 'NOISY' Cm 140bpm - @panas_loops.mp3",
+    },
     page: 'browse-beats.html',
   },
   SLATT: {
     price: '$19.99',
     file: "[young thug, future] 'SLATT'-Cm 140bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[young thug, future] 'SLATT'-Cm 140bpm - @panas_loops.mp3",
+      wav: "[young thug, future] 'SLATT'-Cm 140bpm - @panas_loops WAV.wav",
+      zip: "SLATT.zip",
+    },
     page: 'browse-beats.html',
   },
   'BIZZY BAP': {
     price: '$19.99',
     file: "'BIZZY BAP'-Am 130bpm-@panas_loops.mp3",
+    files: {
+      mp3: "'BIZZY BAP'-Am 130bpm-@panas_loops.mp3",
+      wav: "'BIZZY BAP'-Am 130bpm-@panas_loops WAV.wav",
+      zip: "BIZZY BAP.zip",
+    },
     page: 'bizzy-bap.html',
   },
+  SLICED: {
+    price: '$19.99',
+    file: "[destroy lonely, ken carson, southside] 'SLICED'-Cm 140bpm -@panas_loops.mp3",
+    files: {
+      mp3: "[destroy lonely, ken carson, southside] 'SLICED'-Cm 140bpm -@panas_loops.mp3",
+      wav: "[destroy lonely, ken carson, southside] 'SLICED'-Cm 140bpm -@panas_loops.wav",
+      zip: "SLICED.zip",
+    },
+    page: 'browse-beats.html',
+  },
+  'TRIPPED OUT': {
+    price: '$19.99',
+    file: "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.mp3",
+      wav: "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.wav",
+      zip: "tripped.zip",
+    },
+    page: 'browse-beats.html',
+  },
+};
+
+const licenseDeliverables = {
+  'MP3 Lease': ['mp3'],
+  'WAV Lease': ['mp3', 'wav'],
+  'Trackout Lease': ['mp3', 'wav', 'zip'],
+  'Exclusive Rights': ['mp3', 'wav', 'zip'],
 };
 
 function priceNumber(price) {
@@ -95,10 +174,17 @@ function premiumBeatPageUrl(title) {
   return `premium-beat.html?beat=${encodeURIComponent(beatSlug(title))}`;
 }
 
+function filesForLicense(catalogItem, licenseName) {
+  const deliverables = licenseDeliverables[licenseName] || ['mp3'];
+  const files = deliverables.map((fileType) => catalogItem.files && catalogItem.files[fileType]).filter(Boolean);
+  return files.length ? files : [catalogItem.file].filter(Boolean);
+}
+
 function normalizeCartItem(item) {
   const title = item.beatTitle || titleFromValue(item.title);
   const catalogItem = beatCatalog[title] || {};
   const licenseName = item.licenseName || '';
+  const files = item.files && item.files.length ? item.files : filesForLicense(catalogItem, licenseName);
 
   return {
     title: title || 'Untitled beat',
@@ -106,7 +192,8 @@ function normalizeCartItem(item) {
     licenseName,
     price: item.price && item.price !== 'PREVIEW' ? item.price : catalogItem.price || '$19.99',
     page: item.page || catalogItem.page || 'browse-beats.html',
-    file: item.file || catalogItem.file || '',
+    file: files[0] || item.file || catalogItem.file || '',
+    files,
   };
 }
 
@@ -150,12 +237,41 @@ function renderEmptyCart() {
   cartSummary.innerHTML = '';
 }
 
-function downloadButton(item, hasPaid) {
-  if (!hasPaid || !item.file) return '';
+function downloadLabel(file) {
+  if (/\.zip$/i.test(file)) return 'DOWNLOAD ZIP';
+  if (/\.wav$/i.test(file)) return 'DOWNLOAD WAV';
+  return 'DOWNLOAD MP3';
+}
+
+function downloadButtons(item, hasPaid) {
+  if (!hasPaid) return '';
 
   const orderId = encodeURIComponent(hasPaid);
-  const file = encodeURIComponent(item.file);
-  return `<a class="button button-primary" href="/api/download?orderId=${orderId}&file=${file}">DOWNLOAD BEAT</a>`;
+  const files = item.files && item.files.length ? item.files : [item.file].filter(Boolean);
+
+  return files
+    .map((downloadFile) => {
+      const file = encodeURIComponent(downloadFile);
+      return `<a class="button button-primary" href="/api/download?orderId=${orderId}&file=${file}">${downloadLabel(downloadFile)}</a>`;
+    })
+    .join('');
+}
+
+function setPaymentStatus(message) {
+  const status = document.getElementById('paymentStatus');
+  if (status) status.textContent = message;
+}
+
+function readCheckoutJson(response, fallbackMessage) {
+  return response
+    .json()
+    .catch(() => ({}))
+    .then((data) => {
+      if (!response.ok) {
+        throw new Error(data.error || fallbackMessage);
+      }
+      return data;
+    });
 }
 
 function renderCart() {
@@ -179,7 +295,7 @@ function renderCart() {
           </div>
           <div class="cart-item-actions">
             <span>${escapeHtml(item.price)}</span>
-            ${downloadButton(item, hasPaid)}
+            ${downloadButtons(item, hasPaid)}
             <button type="button" onclick="removeCartItem(${index})">REMOVE</button>
           </div>
         </article>
@@ -227,17 +343,13 @@ function loadCartPayPalSdk(callback) {
       script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(config.clientId)}&currency=USD`;
       script.onload = callback;
       script.onerror = function () {
-        const status = document.getElementById('paymentStatus');
-        if (status) status.textContent = 'PayPal could not load. Check your PayPal client ID.';
+        setPaymentStatus('PayPal could not load. Check your PayPal client ID.');
       };
       document.head.appendChild(script);
     })
     .catch((error) => {
       console.error('PayPal setup error:', error);
-      const status = document.getElementById('paymentStatus');
-      if (status) {
-        status.textContent = 'PayPal checkout is unavailable because the server API routes are not running on this site.';
-      }
+      setPaymentStatus('PayPal checkout is unavailable because the server API routes are not running on this site.');
     });
 }
 
@@ -260,10 +372,15 @@ function renderCartPayPal(items) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ items }),
         })
-          .then((response) => response.json())
+          .then((response) => readCheckoutJson(response, 'PayPal order was not created.'))
           .then((order) => {
             if (!order.id) throw new Error(order.error || 'PayPal order was not created.');
             return order.id;
+          })
+          .catch((error) => {
+            console.error('PayPal create order error:', error);
+            setPaymentStatus('PayPal checkout could not start. Check the PayPal environment and credentials.');
+            throw error;
           });
       },
       onApprove: function (data, actions) {
@@ -272,19 +389,23 @@ function renderCartPayPal(items) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ orderId: data.orderID }),
         })
-          .then((response) => response.json())
+          .then((response) => readCheckoutJson(response, 'PayPal capture failed.'))
           .then((details) => {
             if (details.status !== 'COMPLETED') {
               throw new Error(details.error || 'Payment was not completed.');
             }
             markCartPaid(data.orderID);
             renderCart();
+          })
+          .catch((error) => {
+            console.error('PayPal capture error:', error);
+            setPaymentStatus('PayPal payment could not be verified. Please try again.');
+            throw error;
           });
       },
       onError: function (err) {
         console.error('PayPal checkout error:', err);
-        const status = document.getElementById('paymentStatus');
-        if (status) status.textContent = 'PayPal checkout failed. Please try again.';
+        setPaymentStatus('PayPal checkout failed. Please try again.');
       },
     }).render(buttonContainer);
   });

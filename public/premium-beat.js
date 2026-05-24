@@ -7,6 +7,11 @@ const beats = [
     price: '$19.99',
     image: 'images/in-the-air.png',
     file: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3",
+    files: {
+      mp3: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3",
+      wav: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops WAV.wav",
+      zip: "IN THE AIR.zip"
+    },
     tags: ['dark', 'rage', 'opium', 'underground', 'cinematic'],
     compatibility: ['Destroy Lonely', 'Lucki', 'Ken Carson', 'Future', 'Veeze'],
     description: 'Cold melodic pressure with clipped drums, negative space, and a late-night chrome finish.',
@@ -19,7 +24,12 @@ const beats = [
     length: '2:24',
     price: '$19.99',
     image: 'images/top-floor.png',
-    file: "[destroy lonely, lucki] 'TOP FLOOR'-Cm 140bpm- @panas_loops.mp3",
+    file: "TOP FLOOR tagged.mp3",
+    files: {
+      mp3: "[destroy lonely, lucki] 'TOP FLOOR'-Cm 140bpm- @panas_loops.mp3",
+      wav: "[destroy lonely, lucki] 'TOP FLOOR'-Cm 140bpm- @panas_loops.wav",
+      zip: "TOP FLOOR.zip"
+    },
     tags: ['dark', 'luxury', 'night', 'melodic', 'underground'],
     compatibility: ['Destroy Lonely', 'Lucki', 'Kankan', 'Autumn!', 'Summrs'],
     description: 'A penthouse-level loop with icy melodies, clean bounce, and room for a confident low-register vocal.',
@@ -33,6 +43,11 @@ const beats = [
     price: '$19.99',
     image: 'images/foreign.png',
     file: "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.mp3",
+    files: {
+      mp3: "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.mp3",
+      wav: "[future, destroy lonely, lil baby] 'FOREIGN'- A#m 140bpm- @panas_loops.wav",
+      zip: "FOREIGN.zip"
+    },
     tags: ['trap', 'foreign', 'chrome', 'bounce', 'late night'],
     compatibility: ['Future', 'Lil Baby', 'Destroy Lonely', 'Gunna', 'Young Thug'],
     description: 'Glossy trap motion with luxury-car energy, polished drums, and a hook-ready pocket.',
@@ -45,7 +60,12 @@ const beats = [
     length: '2:45',
     price: '$25.00',
     image: 'images/atlanta.png',
-    file: "[future, lil baby, destroy lonely]'ATLANTA'-Cm 140bpm- @panas_loops.mp3",
+    file: "ATLANTA tagged.mp3",
+    files: {
+      mp3: "[future, lil baby, destroy lonely]'ATLANTA'-Cm 140bpm- @panas_loops.mp3",
+      wav: "[future, lil baby, destroy lonely]'ATLANTA'-Cm 140bpm- @panas_loops WAV.wav",
+      zip: "ATLANTA.zip"
+    },
     tags: ['atlanta', 'trap', 'dark', 'street', 'premium'],
     compatibility: ['Future', 'Lil Baby', 'Young Thug', 'Gunna', 'Lil Keed'],
     description: 'Heavy Atlanta bounce with polished low end, cold keys, and a big commercial street record feel.',
@@ -58,7 +78,12 @@ const beats = [
     length: '2:18',
     price: '$19.99',
     image: 'images/ounce.png',
-    file: "[ian, summrs] 'OUNCE'-Cm 140bpm - @panas_loops.mp3",
+    file: "OUNCE tagged.mp3",
+    files: {
+      mp3: "[ian, summrs] 'OUNCE'-Cm 140bpm - @panas_loops.mp3",
+      wav: "[ian, summrs] 'OUNCE'-Cm 140bpm - @panas_loops WAV.wav",
+      zip: "OUNCE.zip"
+    },
     tags: ['pluggnb', 'float', 'clean', 'melodic', 'gloss'],
     compatibility: ['Ian', 'Summrs', 'Autumn!', 'Kankan', 'Rich Amiri'],
     description: 'A clean melodic bounce with airy space, glossy chords, and a smooth underground pocket.',
@@ -71,7 +96,12 @@ const beats = [
     length: '2:20',
     price: '$19.99',
     image: 'images/crash-da-whip.png',
-    file: "[ken carson, rich amiri, homixide gang] 'CRASH DA WHIP'- Am 130bpm - @panas_loops.mp3",
+    file: "CRASH DA WHIP tagged.mp3",
+    files: {
+      mp3: "[ken carson, rich amiri, homixide gang] 'CRASH DA WHIP'- Am 130bpm - @panas_loops.mp3",
+      wav: "[ken carson, rich amiri, homixide gang] 'CRASH DA WHIP'- Am 130bpm - @panas_loops WAV.wav",
+      zip: "CRASH DAW WHIP.zip"
+    },
     tags: ['rage', 'distorted', 'aggressive', 'opium', 'moshpit'],
     compatibility: ['Ken Carson', 'Homixide Gang', 'Rich Amiri', 'Destroy Lonely', 'Yeat'],
     description: 'Aggressive distorted drums, raw synth energy, and a reckless hook section built for movement.',
@@ -84,7 +114,12 @@ const beats = [
     length: '2:16',
     price: '$19.99',
     image: 'images/lean.png',
-    file: "[lucki, glokk40spaz] 'LEAN' Gm 140bpm - @panas_loops.mp3",
+    file: "LEAN tagged.mp3",
+    files: {
+      mp3: "[lucki, glokk40spaz] 'LEAN' Gm 140bpm - @panas_loops.mp3",
+      wav: "[lucki, glokk40spaz] 'LEAN' Gm 140bpm - @panas_loops WAV.wav",
+      zip: "LEAN.zip"
+    },
     tags: ['dark', 'slurred', 'minimal', 'street', 'late night'],
     compatibility: ['Lucki', 'Glokk40Spaz', 'Veeze', 'Babyface Ray', 'Rx Papi'],
     description: 'Minimal, heavy, and hypnotic with a woozy lead and enough negative space for low-key delivery.',
@@ -97,7 +132,12 @@ const beats = [
     length: '2:22',
     price: '$19.99',
     image: 'images/road.png',
-    file: "[lucki, veeze] 'ROAD' Cm 141 bpm - @panas_loops.mp3",
+    file: "ROAD tagged.mp3",
+    files: {
+      mp3: "[lucki, veeze] 'ROAD' Cm 141 bpm - @panas_loops.mp3",
+      wav: "[lucki, veeze] 'ROAD' Cm 141 bpm - @panas_loops WAV.wav",
+      zip: "ROAD.zip"
+    },
     tags: ['road', 'detroit', 'dark', 'motion', 'minimal'],
     compatibility: ['Lucki', 'Veeze', 'Babyface Ray', 'Rio Da Yung OG', 'Skilla Baby'],
     description: 'A cold road-trip pocket with simple drums, deadpan bounce, and hypnotic late-night repetition.',
@@ -109,8 +149,11 @@ const beats = [
     bpm: '140',
     length: '2:10',
     price: '$19.99',
-    image: 'Designer.jpg',
-    file: "[young thug, future, destroy lonely] 'NOISY' Cm 140bpm - @panas_loops.mp3",
+    image: 'images/noisy.png',
+    file: "NOISY tagged.mp3",
+    files: {
+      mp3: "[young thug, future, destroy lonely] 'NOISY' Cm 140bpm - @panas_loops.mp3"
+    },
     tags: ['chaotic', 'trap', 'dark', 'melodic', 'experimental'],
     compatibility: ['Young Thug', 'Future', 'Destroy Lonely', 'SoFaygo', 'Yeat'],
     description: 'Chaotic melodic trap with sharp ear-candy, strange movement, and a vocal pocket that can go weird fast.',
@@ -123,7 +166,12 @@ const beats = [
     length: '2:26',
     price: '$19.99',
     image: 'images/slatt.png',
-    file: "[young thug, future] 'SLATT'-Cm 140bpm - @panas_loops.mp3",
+    file: "SLATT tagged.mp3",
+    files: {
+      mp3: "[young thug, future] 'SLATT'-Cm 140bpm - @panas_loops.mp3",
+      wav: "[young thug, future] 'SLATT'-Cm 140bpm - @panas_loops WAV.wav",
+      zip: "SLATT.zip"
+    },
     tags: ['slime', 'atlanta', 'trap', 'melodic', 'dark'],
     compatibility: ['Young Thug', 'Future', 'Gunna', 'Lil Keed', 'Yak Gotti'],
     description: 'Slime-coated Atlanta bounce with eerie melody work, rolling drums, and a hook that wants ad-libs.',
@@ -136,11 +184,52 @@ const beats = [
     length: '2:12',
     price: '$19.99',
     image: 'images/bizzy-bap.png',
-    file: "'BIZZY BAP'-Am 130bpm-@panas_loops.mp3",
+    file: "BIZZY BAP TAGGED.mp3",
+    files: {
+      mp3: "'BIZZY BAP'-Am 130bpm-@panas_loops.mp3",
+      wav: "'BIZZY BAP'-Am 130bpm-@panas_loops WAV.wav",
+      zip: "BIZZY BAP.zip"
+    },
     tags: ['bap', 'raw', 'dark', 'bounce', 'underground'],
     compatibility: ['Bizzy Banks', 'Kenzo B', 'Fivio Foreign', 'Sheff G', 'Sleepy Hallow'],
     description: 'A darker drill-adjacent bounce with raw drums, sharp space, and a direct high-energy vocal lane.',
     notes: 'Keep the delivery tight and percussive. This beat likes confident pauses, short hook phrases, and stacked endings.'
+  },
+  {
+    title: 'SLICED',
+    key: 'Cm',
+    bpm: '140',
+    length: '2:21',
+    price: '$19.99',
+    image: 'images/sliced.jpg',
+    file: "SLICED tagged.mp3",
+    files: {
+      mp3: "[destroy lonely, ken carson, southside] 'SLICED'-Cm 140bpm -@panas_loops.mp3",
+      wav: "[destroy lonely, ken carson, southside] 'SLICED'-Cm 140bpm -@panas_loops.wav",
+      zip: "SLICED.zip"
+    },
+    tags: ['dark', 'trap', 'opium', 'southside', 'underground'],
+    compatibility: ['Destroy Lonely', 'Ken Carson', 'Southside', 'Future', 'Homixide Gang'],
+    description: 'A dark 140 BPM trap cut with sharp bounce, cold melody work, and a focused hook pocket.',
+    notes: 'Keep the hook direct and let the drums talk between lines. Short melodic phrases and tight ad-libs will sit best.'
+  },
+  {
+    title: 'TRIPPED OUT',
+    key: 'Cm',
+    bpm: '140',
+    length: '2:17',
+    price: '$19.99',
+    image: 'images/tripped-out.png',
+    file: "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.mp3",
+    files: {
+      mp3: "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.mp3",
+      wav: "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.wav",
+      zip: "tripped.zip"
+    },
+    tags: ['melodic', 'trippy', 'bounce', 'ambient'],
+    compatibility: ['Destroy Lonely', 'Lucki', 'So Faygo'],
+    description: 'Smooth beat with an ambient sample and hard 808s.',
+    notes: 'Keep the vocals atmospheric with some reverb. The pocket is wide open for melodic flows and rhythmic variation.'
   }
 ];
 
@@ -194,6 +283,7 @@ function renderLicenses(beat) {
     {
       name: 'MP3 Lease',
       price: '$19.99',
+      deliverables: ['mp3'],
       detail: 'Tagged MP3 file with a basic non-exclusive license for smaller releases.',
       features: [
         'Tagged MP3 file only',
@@ -209,6 +299,7 @@ function renderLicenses(beat) {
     {
       name: 'WAV Lease',
       price: '$29.99',
+      deliverables: ['mp3', 'wav'],
       detail: 'Untagged WAV and MP3 files with higher audio quality for monetized releases.',
       features: [
         'Untagged WAV + MP3',
@@ -225,6 +316,7 @@ function renderLicenses(beat) {
     {
       name: 'Trackout Lease',
       price: '$59.99',
+      deliverables: ['mp3', 'wav', 'zip'],
       detail: 'Full ZIP delivery with stems for serious mixing, mastering, and commercial releases.',
       features: [
         'WAV + MP3 + full stems (ZIP file)',
@@ -241,6 +333,7 @@ function renderLicenses(beat) {
     {
       name: 'Exclusive Rights',
       price: '$299.99',
+      deliverables: ['mp3', 'wav', 'zip'],
       detail: 'Full exclusive usage rights for one buyer only, with the beat removed from the store after purchase.',
       features: [
         'Full rights for one buyer only',
@@ -255,15 +348,18 @@ function renderLicenses(beat) {
     }
   ];
 
-  document.getElementById('licenseGrid').innerHTML = licenses.map((license, index) => `
+  document.getElementById('licenseGrid').innerHTML = licenses.map((license, index) => {
+    const isAvailable = license.deliverables.every((fileType) => beat.files && beat.files[fileType]);
+    return `
     <article class="license-card ${index === 2 ? 'featured-license' : ''}">
       <h3>${license.name}</h3>
       <strong>${license.price}</strong>
       <p>${license.detail}</p>
       <ul>${license.features.map((feature) => `<li>${feature}</li>`).join('')}</ul>
-      <button type="button" onclick="window.location.href='${licensePageUrl(beat, license)}'">Buy License</button>
+      <button type="button" ${isAvailable ? `onclick="window.location.href='${licensePageUrl(beat, license)}'"` : 'disabled'}>${isAvailable ? 'Buy License' : 'Unavailable'}</button>
     </article>
-  `).join('');
+  `;
+  }).join('');
 }
 
 function renderSimilar(beat) {

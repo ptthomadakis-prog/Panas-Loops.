@@ -1,9 +1,16 @@
 const beats = [
   {
+    title: 'SLICED',
+    info: 'Cm - 140 BPM - 2:21',
+    price: '$19.99',
+    file: 'SLICED tagged.mp3',
+    page: 'browse-beats.html',
+  },
+  {
     title: 'IN THE AIR',
     info: 'Cm - 150 BPM - 2:08',
     price: '$19.99',
-    file: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3.mp3",
+    file: "[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3",
     page: 'in-the-air.html',
   },
   {
@@ -25,6 +32,13 @@ const beats = [
     info: 'Cm - 140 BPM - 2:24',
     price: '$19.99',
     file: 'TOP FLOOR tagged.mp3',
+    page: 'browse-beats.html',
+  },
+  {
+    title: 'TRIPPED OUT',
+    info: 'Cm - 140 BPM - 2:17',
+    price: '$19.99',
+    file: "[destroy lonely, hxg, lucki] 'TRIPPED OUT'- Cm 140bpm - @panas_loops.mp3",
     page: 'browse-beats.html',
   },
 ];
@@ -74,12 +88,16 @@ function imagePath(title) {
   return `images/${beatSlug(title)}.png`;
 }
 
+function fallbackImagePath(title) {
+  return `images/${beatSlug(title)}.jpg`;
+}
+
 function beatSlug(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
 function beatImage(title) {
-  return `<img src="${imagePath(title)}" alt="${title} artwork" loading="lazy" onerror="this.hidden = true" />`;
+  return `<img src="${imagePath(title)}" alt="${title} artwork" loading="lazy" onerror="if (!this.dataset.fallback) { this.dataset.fallback = 'jpg'; this.src = '${fallbackImagePath(title)}'; } else { this.hidden = true; }" />`;
 }
 
 function saveCart() {
@@ -272,7 +290,7 @@ function initializeCart() {
 function initializeFeaturedPlayer() {
   const featuredAudio = document.getElementById('featured-audio');
   if (featuredAudio) {
-    featuredAudio.src = audioPath("[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3.mp3");
+    featuredAudio.src = audioPath("[destroy lonely, lucki, glok40spaz] 'IN THE AIR'-Cm 150bpm- @panas_loops.mp3");
     featuredAudio.onended = () => setFeaturedPlaying(false);
   }
   setFeaturedPlaying(false);

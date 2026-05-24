@@ -1,5 +1,4 @@
 import { createReadStream, existsSync } from "fs";
-import { mkdir, writeFile } from "fs/promises";
 import { basename, resolve } from "path";
 import { Readable } from "stream";
 import { NextRequest, NextResponse } from "next/server";
@@ -17,8 +16,6 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Missing loop kit or lead unlock" }, { status: 400 });
     }
 
-    await mkdir(loopRoot, { recursive: true });
-
     const fileName = basename(kit.downloadFile);
     const filePath = resolve(loopRoot, fileName);
 
@@ -30,14 +27,12 @@ export async function GET(request: NextRequest) {
       const placeholder = [
         `${kit.title} - Free Loop Kit`,
         "",
-        "Drop the real ZIP for this kit into:",
-        `private/loops/${fileName}`,
+        "This deployment does not include the large loop ZIP archives.",
+        "Move the ZIPs to object storage and update this route to stream them from there.",
         "",
-        "This placeholder keeps the email unlock flow testable until the final loops are added."
+        "Your email unlock was received, but the downloadable archive is not attached to this deployment."
       ].join("\n");
-      await writeFile(filePath.replace(/\.zip$/i, ".txt"), placeholder, "utf8");
-      const textStream = Readable.toWeb(createReadStream(filePath.replace(/\.zip$/i, ".txt"))) as ReadableStream;
-      return new NextResponse(textStream, {
+      return new NextResponse(placeholder, {
         headers: {
           "Content-Type": "text/plain; charset=utf-8",
           "Content-Disposition": `attachment; filename="${fileName.replace(/\.zip$/i, ".txt")}"`,

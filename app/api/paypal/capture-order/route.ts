@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getPayPalAccessToken, paypalBaseUrl } from "../../_lib/paypal";
+import { getPayPalAccessToken, paypalFetch } from "../../_lib/paypal";
 
 export async function POST(request: Request) {
   try {
@@ -10,13 +10,17 @@ export async function POST(request: Request) {
     }
 
     const accessToken = await getPayPalAccessToken();
-    const response = await fetch(`${paypalBaseUrl()}/v2/checkout/orders/${encodeURIComponent(orderId)}/capture`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
+    const response = await paypalFetch(
+      `/v2/checkout/orders/${encodeURIComponent(orderId)}/capture`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
       },
-    });
+      "capture PayPal order",
+    );
 
     const data = await response.json();
 
@@ -32,4 +36,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
